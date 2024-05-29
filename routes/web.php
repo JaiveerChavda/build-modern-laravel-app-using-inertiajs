@@ -15,3 +15,9 @@ Route::get('/settings', function () {
     sleep(1);
     return Inertia::render('Settings');
 });
+
+Route::post(
+    'logout',
+    fn () =>
+    dd(request('foo'))
+);

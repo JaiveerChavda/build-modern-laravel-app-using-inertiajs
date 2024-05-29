@@ -6,7 +6,7 @@ export default {
 </script>
 <template>
     <div class="card">
-        <h1>Home</h1>
+        <h1 class="text-4xl font-semibold">Home</h1>
     </div>
 
     <Nav/>
