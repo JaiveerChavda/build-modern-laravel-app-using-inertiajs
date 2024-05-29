@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <div class="p-8">
-        @inertia
-    </div>
+    @inertia
 </body>
 
 </html

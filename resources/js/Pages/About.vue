@@ -1,15 +1,15 @@
 <script>
-import Nav from "../Shared/Nav.vue"
-export default{
-    components:{
-        Nav
+import Layout from "../Shared/Layout.vue";
+export default {
+    components: {
+        Layout
     }
 }
 </script>
 <template>
-    <div class="card">
-        <h1>About</h1>
-    </div>
-
-    <Nav/>
+    <Layout>
+        <div class="card">
+            <h1 class="text-3xl">About</h1>
+        </div>
+    </Layout>
 </template>
