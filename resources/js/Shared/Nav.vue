@@ -1,8 +1,9 @@
 <script>
 import {Link} from '@inertiajs/vue3';
+import NavLink from './NavLink.vue';
 export default{
     components:{
-        Link
+        Link,NavLink
     }
 }
 
@@ -11,10 +12,9 @@ export default{
 <template>
      <nav class="mt-6">
         <ul class="list">
-            <li><Link class="text-blue-500 hover:underline" href="/">Home</Link></li>
-            <li><Link class="text-blue-500 hover:underline" href="/about">About</Link></li>
-            <li><Link class="text-blue-500 hover:underline" href="/settings">Settings</Link></li>
-            <li><Link class="text-blue-500 hover:underline" href="/logout" method="post" as="button" :data="{foo:'bar'}">Logout</Link></li>
+            <li><NavLink href="/" :active="$page.url == '/'">Home</NavLink></li>
+            <li><NavLink href="/about" :active="$page.url.startsWith('/about')">About</NavLink></li>
+            <li><NavLink href="/settings" :active="$page.url.startsWith('/settings')">Settings</NavLink></li>
         </ul>
     </nav>
 </template>
