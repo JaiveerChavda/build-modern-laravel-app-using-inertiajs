@@ -12,5 +12,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/settings', function () {
+    sleep(1);
     return Inertia::render('Settings');
 });
