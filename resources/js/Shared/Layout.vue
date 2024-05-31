@@ -3,6 +3,11 @@ import Nav from './Nav.vue'
 export default {
     components: {
         Nav
+    },
+    computed:{
+        username(){
+            return this.$page.props.auth.user.name
+        }
     }
 }
 </script>
@@ -10,7 +15,7 @@ export default {
 <template>
     <section class="p-6 bg-gray-200 ">
         <header class="flex justify-between">
-            <h1 class="font-bold text-lg">My App</h1>
+            <h1 class="font-bold text-lg">My App welocme {{ username }} </h1>
             <Nav />
         </header>
     </section>
