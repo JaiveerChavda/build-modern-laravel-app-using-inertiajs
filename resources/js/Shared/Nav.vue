@@ -1,12 +1,5 @@
-<script>
-import {Link} from '@inertiajs/vue3';
+<script setup>
 import NavLink from './NavLink.vue';
-export default{
-    components:{
-        Link,NavLink
-    }
-}
-
 </script>
 
 <template>

@@ -12,7 +12,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/settings', function () {
-
     return Inertia::render('Settings', [
         'time' => now()->toTimeString()
     ]);
