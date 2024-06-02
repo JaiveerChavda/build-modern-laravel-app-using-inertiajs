@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <Link class="text-blue-500 hover:underline" :class="{ 'font-bold underline': active }">
+    <Link class="text-black hover:underline" :class="{ 'font-bold underline': active }">
     <slot></slot>
     </Link>
 </template>

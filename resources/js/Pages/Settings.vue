@@ -5,6 +5,10 @@ defineProps({
 })
 </script>
 <template>
+    <Head>
+        <title>Settings</title>
+        <meta name="description" content="Hello this is my app's setting page" head-key="description">
+    </Head>
     <div class="card">
         <h1 class="text-3xl">Settings</h1>
     </div>

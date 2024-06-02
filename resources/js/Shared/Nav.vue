@@ -4,7 +4,7 @@ import NavLink from './NavLink.vue';
 
 <template>
      <nav>
-        <ul class="list-disc list-inside space-x-4 flex">
+        <ul class="space-x-6 flex">
             <li><NavLink href="/" :active="$page.url == '/'">Home</NavLink></li>
             <li><NavLink href="/about" :active="$page.url.startsWith('/about')">About</NavLink></li>
             <li><NavLink href="/settings" :active="$page.url.startsWith('/settings')">Settings</NavLink></li>
