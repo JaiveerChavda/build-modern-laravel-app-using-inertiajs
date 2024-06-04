@@ -1,13 +1,32 @@
 <script setup>
 import Pagination from '../Shared/Pagination.vue';
-defineProps({
-    users: Object
+import { ref, watch } from "vue"
+import { router } from '@inertiajs/vue3'
+
+let props = defineProps({
+    users: Object,
+    filter:Object
 })
+
+const search = ref(props.filter.search);
+
+watch(search, value => {
+    router.get('/users',
+        { search: value },
+        {
+            preserveState: true ,
+            replace:true,
+        }
+    )
+});
+
 </script>
 <template>
     <div class="container">
-        <h1 class="text-3xl mb-4">Users</h1>
-
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl mb-4">Users</h1>
+            <input type="text" placeholder="Search" v-model="search" class="rounded border  px-3 py-2">
+        </div>
         <!-- users table -->
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
