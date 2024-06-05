@@ -1,6 +1,11 @@
 <script setup>
 import { reactive } from 'vue'
 import { router } from '@inertiajs/vue3'
+
+defineProps({
+    errors:Object
+})
+
 let form = reactive({
     name: '',
     email: '',
@@ -26,7 +31,11 @@ let submit = () => {
             </label>
 
             <input type="text" v-model="form.name" class="border border-gray-400 p-2 w-full" name="name" id="name"
-                required>
+                >
+                <div class="mt-1 text-red-500"
+                    v-if="errors.name"
+                    v-text="errors.name">
+                </div>
         </div>
 
         <div class="mb-6">
@@ -35,7 +44,11 @@ let submit = () => {
             </label>
 
             <input type="email" v-model="form.email" class="border border-gray-400 p-2 w-full" name="email" id="email"
-                required>
+                >
+                <div class="mt-1 text-red-500"
+                    v-if="errors.email"
+                    v-text="errors.email">
+                </div>
         </div>
 
         <div class="mb-6">
@@ -44,7 +57,11 @@ let submit = () => {
             </label>
 
             <input type="password" v-model="form.password" class="border border-gray-400 p-2 w-full" name="password"
-                id="password" required>
+                id="password" >
+                <div class="mt-1 text-red-500"
+                    v-if="errors.password"
+                    v-text="errors.password">
+                </div>
         </div>
 
         <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>

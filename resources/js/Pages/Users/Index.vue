@@ -24,7 +24,10 @@ watch(search, value => {
 <template>
     <div class="container">
         <div class="flex justify-between items-center">
+            <div class="flex items-center">
             <h1 class="text-3xl mb-4">Users</h1>
+            <Link href="users/create" class="text-sm ml-3 text-blue-500">New User</Link>
+            </div>
             <input type="text" placeholder="Search" v-model="search" class="rounded border  px-3 py-2">
         </div>
         <!-- users table -->

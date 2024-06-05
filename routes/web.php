@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rules\Password;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -46,7 +47,7 @@ Route::post('users', function () {
     $validated = request()->validate([
         'name' => 'required',
         'email' => 'required|email',
-        'password' => 'required'
+        'password' => ['required',Password::min(10)]
     ]);
 
     User::create($validated);
