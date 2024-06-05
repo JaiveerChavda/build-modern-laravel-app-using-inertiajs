@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { router } from '@inertiajs/vue3'
+import ErrorMessage from '../../Shared/Input/ErrorMessage.vue';
 
 defineProps({
     errors:Object
@@ -32,10 +33,7 @@ let submit = () => {
 
             <input type="text" v-model="form.name" class="border border-gray-400 p-2 w-full" name="name" id="name"
                 >
-                <div class="mt-1 text-red-500"
-                    v-if="errors.name"
-                    v-text="errors.name">
-                </div>
+                <ErrorMessage :message="errors.name"/>
         </div>
 
         <div class="mb-6">
@@ -45,10 +43,8 @@ let submit = () => {
 
             <input type="email" v-model="form.email" class="border border-gray-400 p-2 w-full" name="email" id="email"
                 >
-                <div class="mt-1 text-red-500"
-                    v-if="errors.email"
-                    v-text="errors.email">
-                </div>
+                <ErrorMessage :message="errors.email"/>
+
         </div>
 
         <div class="mb-6">
@@ -58,10 +54,8 @@ let submit = () => {
 
             <input type="password" v-model="form.password" class="border border-gray-400 p-2 w-full" name="password"
                 id="password" >
-                <div class="mt-1 text-red-500"
-                    v-if="errors.password"
-                    v-text="errors.password">
-                </div>
+                <ErrorMessage :message="errors.password"/>
+
         </div>
 
         <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>

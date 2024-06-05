@@ -46,7 +46,7 @@ Route::post('users', function () {
 
     $validated = request()->validate([
         'name' => 'required',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users,email',
         'password' => ['required',Password::min(10)]
     ]);
 
