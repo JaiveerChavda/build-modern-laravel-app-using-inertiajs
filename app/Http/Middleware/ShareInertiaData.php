@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -17,7 +18,11 @@ class ShareInertiaData
     public function handle(Request $request, Closure $next): Response
     {
         Inertia::share([
-            'auth.user.name' => 'jaiveer',
+            'auth' => Auth::user() ? [
+                'user' => [
+                    'username' => auth()->user()->name,
+                ]
+            ] : null
         ]);
         return $next($request);
     }

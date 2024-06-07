@@ -8,6 +8,7 @@ import NavLink from './NavLink.vue';
             <li><NavLink href="/" :active="$page.url == '/'">Home</NavLink></li>
             <li><NavLink href="/about" :active="$page.url.startsWith('/about')">About</NavLink></li>
             <li><NavLink href="/users" :active="$page.url.startsWith('/users')">Users</NavLink></li>
+            <li><NavLink href="/logout" method="post" as="button" >Logout</NavLink></li>
         </ul>
     </nav>
 </template>
