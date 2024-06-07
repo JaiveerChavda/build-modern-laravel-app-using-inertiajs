@@ -1,9 +1,3 @@
-<script>
-export default {
-    layout: null,
-};
-</script>
-
 <script setup>
 import {useForm} from '@inertiajs/vue3'
 import ErrorMessage from '../../Shared/Input/ErrorMessage.vue'
@@ -15,6 +9,10 @@ let form = useForm({
 let submit = () => {
     form.post('/login');
 }
+
+defineOptions({
+    layout:null
+})
 </script>
 
 <template>
