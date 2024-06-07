@@ -31,7 +31,7 @@ watch(search, value => {
             <input type="text" placeholder="Search" v-model="search" class="rounded border  px-3 py-2">
         </div>
         <!-- users table -->
-        <div class="flex flex-col">
+        <div v-if="props.users.data.length" class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -61,6 +61,11 @@ watch(search, value => {
                 </div>
             </div>
         </div>
+
+        <div v-else>
+            <h1 class="text-xl text-gray-400 font-semibold text-center p-5">No User's Exists</h1>
+        </div>
+
 
         <!-- paginator -->
         <Pagination :links="users.links" class="mt-6" />

@@ -43,11 +43,10 @@ Route::get('users/create', function () {
 });
 
 Route::post('users', function () {
-
     $validated = request()->validate([
         'name' => 'required',
         'email' => 'required|email|unique:users,email',
-        'password' => ['required',Password::min(10)]
+        'password' => ['required',Password::min(8)]
     ]);
 
     User::create($validated);
