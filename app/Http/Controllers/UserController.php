@@ -74,6 +74,21 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, User $user)
+    {
+        dd($user);
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => ['required',Rule::unique('users')->ignore(auth()->id())],
+        ]);
+
+        $user->update($validated);
+
+        return redirect()->route('users.index');
+    }
 
     /**
      * Remove the specified resource from storage.
