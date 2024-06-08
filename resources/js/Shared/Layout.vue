@@ -12,7 +12,8 @@ const username = computed(() => usePage().props.auth.user.username)
     </Head>
     <section class="p-6 bg-gray-200 ">
         <header class="flex justify-between">
-            <h1 class="font-bold text-lg">My App welocme {{ username }} </h1>
+            <h1 class="font-bold text-lg">My App <span class="text-sm font-normal">welocme {{ username }}</span></h1>
+
             <Nav />
         </header>
     </section>
