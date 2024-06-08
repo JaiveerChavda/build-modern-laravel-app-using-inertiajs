@@ -11,6 +11,7 @@ defineProps({
             :href="link.url"
             v-html="link.label"
             class="px-1"
+            preserve-scroll
             :class="{ 'text-gray-500' : !link.url , 'font-bold' : link.active  }"
         />
     </div>
