@@ -7,7 +7,9 @@ let form = useForm({
 })
 
 let submit = () => {
-    form.post('/login');
+    form.post('/login',{
+        onFinish: () => form.reset('password')
+    });
 }
 
 defineOptions({
