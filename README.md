@@ -70,4 +70,12 @@ php artisan serve
 ```
 
 now open your preferred browser and enter the url on which you laravel server is running
-In this case it's [http://127.0.0.1:800](http://127.0.0.1:800)
+In this case it's [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## Authentication Credentials
+
+Only authenticated users are allowed, so here are the credentials (with admin previlages):
+
+email : admin@example.com
+
+password : password
