@@ -11,6 +11,7 @@ Software needed on your system before running this project:
 
 -   php 8.2.0
 -   composer 2.5.0
+-   node v18.0.0
 
 ## Installation
 
@@ -45,3 +46,28 @@ Follow these steps to set up a development environment:
     ```bash
     php artisan migrate --seed
     ```
+
+6. **Install client side Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+7. **Run Development Server**
+
+    ```bash
+    npm run dev
+    ```
+
+    You're done with the installation part.
+
+## Running the project
+
+start the laravel server:
+
+```bash
+php artisan serve
+```
+
+now open your preferred browser and enter the url on which you laravel server is running
+In this case it's [http://127.0.0.1:800](http://127.0.0.1:800)
