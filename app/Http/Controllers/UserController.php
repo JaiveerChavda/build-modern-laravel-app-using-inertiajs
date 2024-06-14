@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rules\Unique;
@@ -24,7 +25,7 @@ class UserController extends Controller
                     fn ($query, $search) =>
                     $query->where('name', 'like', "%$search%")
                 )
-                ->paginate(10)
+                ->paginate(20)
                 ->withQueryString()
                 ->through(fn ($user) => [
                     'id' => $user->id,
@@ -79,10 +80,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        dd($user);
+        Gate::authorize('update', $user);
+
         $validated = $request->validate([
             'name' => 'required',
-            'email' => ['required',Rule::unique('users')->ignore(auth()->id())],
+            'email' => ['required',Rule::unique('users', 'email')->ignore($user->id)],
         ]);
 
         $user->update($validated);
